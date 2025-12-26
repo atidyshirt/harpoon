@@ -1,3 +1,7 @@
+if package.loaded["harpoon"] and type(package.loaded["harpoon"]) == "table" then
+  return package.loaded["harpoon"]
+end
+
 local Log = require("harpoon.logger")
 local Ui = require("harpoon.ui")
 local Data = require("harpoon.data")
@@ -176,4 +180,5 @@ function Harpoon.setup(self, partial_config)
     return self
 end
 
+package.loaded["harpoon"] = the_harpoon
 return the_harpoon
